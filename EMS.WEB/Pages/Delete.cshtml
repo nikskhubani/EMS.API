@@ -1,0 +1,11 @@
+@page "/Delete/{id}"
+@model DeleteEmployeeModel
+
+<h2>Delete Employee</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Employee.Id" />
+    <p>Are you sure you want to delete the employee: <strong>@Model.Employee.FirstName @Model.Employee.LastName</strong>?</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

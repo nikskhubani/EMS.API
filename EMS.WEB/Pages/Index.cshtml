@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Employees</h1>
+    <form method="get" id="searchForm" class="form-inline">
+        <table class="table">
+            <tr><input type="text" class="mr-2" id="searchTerm" name="searchTerm" value="@Model.SearchTerm" /></tr>
+            <tr><button type="submit" class="btn btn-primary ml-2">Search</button></tr>
+            <tr><a href="javascript:void(0);" class="btn btn-secondary ml-2" onclick="clearSearch()">Clear</a></tr>
+        </table>
+    </form>
+    <script>
+        function clearSearch() {
+            document.getElementById('searchTerm').value = '';
+            document.getElementById('searchForm').submit();
+        }
+    </script>
+    @if (Model.Employees != null && Model.Employees.Count > 0)
+    {
+    <table class="table">
+        <caption>List of all employees</caption>
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].Id)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].FirstName)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].MiddleName)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].LastName)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].Address)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].Department)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Employees[0].Email)
+                </th>
+
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Employees)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiddleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-page="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+    }
+    else {
+    <div class="text-center">
+        <h2>No Results</h2>
+    </div>
+    }
+    <div class="text-center">
+        <a class="btn btn-primary" asp-page="Create">Create Employee</a>
+    </div>
+</div>

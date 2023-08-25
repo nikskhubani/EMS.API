@@ -1,0 +1,47 @@
+@page
+@model CreateEmployeeModel
+
+<h2>Create Employee</h2>
+
+<form method="post">
+    <div class="form-group pb-2">
+        <label asp-for="Employee.FirstName"></label>
+        <input asp-for="Employee.FirstName" class="form-control" />
+        <span asp-validation-for="Employee.FirstName" class="text-danger"></span>
+    </div>
+     <div class="form-group pb-2">
+        <label asp-for="Employee.MiddleName"></label>
+        <input asp-for="Employee.MiddleName" class="form-control" />
+        <span asp-validation-for="Employee.MiddleName" class="text-danger"></span>
+    </div>
+    <div class="form-group pb-2">
+        <label asp-for="Employee.LastName"></label>
+        <input asp-for="Employee.LastName" class="form-control" />
+        <span asp-validation-for="Employee.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group pb-2">
+        <label asp-for="Employee.Address"></label>
+        <input asp-for="Employee.Address" class="form-control" />
+        <span asp-validation-for="Employee.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group pb-2">
+        <label asp-for="Employee.Department"></label>
+        <input asp-for="Employee.Department" class="form-control" />
+        <span asp-validation-for="Employee.Department" class="text-danger"></span>
+    </div>
+    <div class="form-group pb-2">
+        <label asp-for="Employee.Email"></label>
+        <input asp-for="Employee.Email" type="email" class="form-control" />
+        <span asp-validation-for="Employee.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group pb-2">
+        <label asp-for="Employee.Phone"></label>
+        <input asp-for="Employee.Phone" class="form-control"  />
+        <span asp-validation-for="Employee.Phone" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+
+    
+</form>
