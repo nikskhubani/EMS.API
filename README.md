@@ -20,5 +20,8 @@ you will see landing page something like
 
 # notes
 .net 7.0 and VS 2022 has some issues while running the project hence I proceeded with creating one in VS Code and command line
+Test cases can be many more but it is just to show the skills of test cases
+I detached the backend (CRUD APIs) from front-end that will allow us to have better scaling options of backend or front and easily manage better front end technology such as REACT, NextJS etc..
+
 
 
