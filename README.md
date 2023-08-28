@@ -29,5 +29,5 @@ you will see landing page something like
 - I detached the backend (CRUD APIs) from front-end that will allow us to have better scaling options of backend or front and easily manage better front end technology such as REACT, NextJS etc..
 - The host name of API is referred in app settings json file in front end app 
 ![image](https://github.com/nikskhubani/EMS.API/assets/29400321/8bf44589-71fb-4054-8221-5f6504323e69)
-- 
+
 
